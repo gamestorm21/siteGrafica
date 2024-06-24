@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar Serviço</title>
+</head>
+<body>
+    <h1>Adicionar Serviço</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>
+    <a href="{% url 'lista_servicos' %}">Voltar à Lista de Serviços</a>
+</body>
+</html>

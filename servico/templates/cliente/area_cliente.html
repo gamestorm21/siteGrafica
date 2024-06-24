@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Área do Cliente</title>
+</head>
+<body>
+    <h1>Bem-vindo, {{ request.user.username }}</h1>
+    <h2>Seus Serviços</h2>
+    <ul>
+        {% for servico in servicos %}
+            <li>{{ servico.nome_cliente }} - {{ servico.funcionario.nome }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'lista_servicos' %}">Ver Todos os Serviços</a>
+</body>
+</html>

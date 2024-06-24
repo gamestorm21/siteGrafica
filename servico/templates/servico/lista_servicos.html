@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Serviços</title>
+</head>
+<body>
+    <h1>Lista de Serviços</h1>
+    <ul>
+        {% for servico in servicos %}
+            <li>{{ servico.nome_cliente }} - {{ servico.funcionario.nome }}
+                <a href="{% url 'adicionar_ao_carrinho' servico.id %}">Adicionar ao Carrinho</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'adicionar_servico' %}">Adicionar Serviço</a>
+    <a href="{% url 'registro_cliente' %}">Registrar Cliente</a>
+    <a href="{% url 'area_cliente' %}">Área do Cliente</a>
+</body>
+</html>

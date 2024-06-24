@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar ao Carrinho</title>
+</head>
+<body>
+    <h1>Adicionar ao Carrinho para {{ servico.nome_cliente }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Adicionar ao Carrinho</button>
+    </form>
+    <a href="{% url 'lista_servicos' %}">Voltar à Lista de Serviços</a>
+</body>
+</html>
